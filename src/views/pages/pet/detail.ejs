@@ -1,0 +1,85 @@
+<% layout('layout/layout.main') %>
+<div class="mt-5">
+  <h3 class="mb-4">Thông tin hồ sơ thú cưng</h3>
+  <div class="detail-info-container">
+    <div>
+      <div class="detail-title-card">Chủ sở hữu</div>
+      <form action="">
+        <!-- Form Info Customer -->
+        <div class="detail-form">
+          <% for( let field of customerField ) { %>
+          <input type="text" class="form-control input-form" placeholder="<%= field %>" readonly value="<%= petInfo.customer[field]  %>" />
+          <% } %>
+        </div>
+      </form>
+    </div>
+    <hr />
+    <div>
+      <div class="detail-title-card">Thú cưng</div>
+      <!-- Form Info Pets -->
+      <form action="">
+        <div class="d-flex align-items-center">
+          <div class="avatar-container">
+            <img alt="image-rd" class="avatar" id="avatar-pet" src="/public/assets/img/dog.jpg" />
+            <!-- <input type="file" class="" style="width: 80%" /> -->
+          </div>
+          <div class="detail-form">
+            <% for( let field of petField ) { %>
+            <input type="text" class="form-control input-form" placeholder="<%= field %>" readonly value="<%= petInfo[field] %> " />
+            <% } %>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="btn-container">
+      <button type="button" class="btn btn-primary">Edit Profile</button>
+    </div>
+  </div>
+</div>
+<div class="mt-5">
+  <!-- Medical Record -->
+  <h3 class="mb-4">Lịch sử khám bệnh</h3>
+  <div class="detail-info-container">
+    <div style="text-align: end;">
+      <button type="button" class="btn btn-primary" id="btn-add">Thêm</button>
+    </div>
+    <div>
+      <!-- Group btn -->
+      <div class="btn-container justify-content-center">
+        <div class="btn-group m-3" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked />
+          <label class="btn btn-outline-primary" id="btn_history" for="btnradio1">Lịch sử khám</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+          <label class="btn btn-outline-primary" id="btn_immunization" for="btnradio2">Tiêm chủng</label>
+
+          <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
+          <label class="btn btn-outline-primary" id="btn_deworm" for="btnradio3">Tẩy giun</label>
+        </div>
+      </div>
+      <!-- List -->
+      <div id="table-record" class="">
+        <table class="table table-borderless table-his"></table>
+        <hr />
+        <!-- Pagination Group-->
+        <div class="pagination-container">
+          <div class="d-flex">
+            <div><span id="page-start">6</span> - <span id="page-end">10</span> / <span id="page-total">11</span></div>
+            <div class="d-flex" id="btn-pagination">
+              <button class="btn-back">
+                <i class="fa-solid fa-angle-left"></i>
+              </button>
+              <div style="width: 20px"></div>
+              <button class="btn-next">
+                <i class="fa-solid fa-angle-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript DOM -->
+</div>
+<script src="/public/js//pet/detail.js"></script>

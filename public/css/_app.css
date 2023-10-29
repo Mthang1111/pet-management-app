@@ -1,0 +1,47 @@
+@import "./detail.css";
+@Import "./register.css";
+@import "./resetpassword.css";
+@import "./login.css";
+@import "./list.css";
+@import "./customer-details.css";
+@import "./dewormming.css";
+@import "./immunization.css";
+@import "./medical-history.css";
+
+
+:root{
+  --bg-primary:#192028;
+}
+
+@font-face {
+  font-family: "PublicSans";
+  src: url(/public/assets/font/static/PublicSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PublicSans";
+  font-weight: bold;
+  src: url(/public/assets/font/static/PublicSans-Bold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: PublicSans, serif;
+  color:white;
+}
+
+.root{
+  background-color: var(--bg-main);
+  padding: 20px 0;
+}
+
+.full-height{
+  height: calc(100vh - 96px);
+}
+
+input:read-only {
+  background-color: rgba(33, 43, 54, 1) !important;
+  color: rgba(255,255,255,1);
+  }

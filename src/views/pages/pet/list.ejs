@@ -1,0 +1,33 @@
+<% layout('layout/layout.main') %>
+<!-- TODO-MANH: design content list pet here -->
+<div class="full-height">
+  <h1>Danh sách thú cưng</h1>
+  <table class="table table-borderless table-hover">
+    <thead>
+      <tr>
+        <td scope="col">ID</td>
+        <td scope="col">Tên khách hàng</td>
+        <td scope="col">Số điện</td>
+        <td scope="col">Tên thú cưng</td>
+        <td scope="col">Loại</td>
+        <td scope="col">Trạng thái</td>
+      </tr>
+    </thead>
+    <tbody>
+      <!--Render data-->
+      <% for (let i = 0; i < pets.length; i++) {%>
+      <tr accesskey="<%= pets[i]._id %> ">
+        <td><%= i %></td>
+        <td><%= pets[i].customer.name %></td>
+        <td><%= pets[i].customer.phone %></td>
+        <td><%= pets[i].name %></td>
+        <td><%= pets[i].type %></td>
+        <td id="status"><%= pets[i].status %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<!-- Javascript DOM -->
+<script src="/public/js/pet/list.js"></script>
